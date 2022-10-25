@@ -13,6 +13,30 @@ a {
 
 * {
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
+*{
+  margin:auto;
+  text-align: center;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #414141 #121212;
+  user-select: none;
+}
+
+*::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #414141;
+  border-radius: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +47,120 @@ a {
     color: white;
     background: black;
   }
+}
+
+.App {
+  margin: auto;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  place-content: center;
+  background-color: #13111c;
+  color: #d0d0d0;
+}
+
+.Task {
+  height: 250px;
+  width: 150px;
+  margin: 20px;
+  display: grid;
+  text-align: center;
+  justify-content: space-evenly;
+  border: 1px solid #414141;
+  padding: 10px;
+  justify-self: center;
+  align-self: center;
+}
+
+.TaskContainer {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+  grid-auto-rows: 400px;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+}
+
+.title,
+.description,
+.date {
+  display: grid;
+  align-content: center;
+}
+
+.NewTaskButton {
+  height: 45px;
+  width: 150px;
+  position: fixed;
+  bottom: 60px;
+  left: calc(50vw - 75px);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #414141;
+  color:#d0d0d0;
+}
+
+.NewTaskButton:hover{
+  background-color: #23212c;
+}
+
+.newTask {
+  display: grid;
+  height: 250px;
+  border: 1px solid #414141;
+  padding: 10px;
+  width: 150px;
+  margin: 20px;
+  grid-template-rows: 40px auto;
+}
+
+.newTitle {
+  background: transparent;
+  border: 1px solid #414141;
+  color: #d0d0d0;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+
+.newTitle:focus-visible, .newDescription:focus-visible {
+  outline-style: none;
+}
+
+.newDescription {
+  background: transparent;
+  border: 1px solid #414141;
+  color: #d0d0d0;
+  width: 100%;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.buttons, .buttonsm{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.buttons button{
+  background: transparent;
+  border: 1px solid #414141;
+  color:#d0d0d0;
+  cursor: pointer;
+  padding: 6px 3px;
+  margin: 2px;
+}
+
+.buttons button:hover, .buttonsm button:hover{
+  background-color: #23212c;
+}
+
+.buttonsm button{
+  background: transparent;
+  border: 1px solid #414141;
+  color:#d0d0d0;
+  cursor: pointer;
+  padding: 6px 3px;
+  margin: 2px;
+  height: 30px;
+  width: 55px;
 }
